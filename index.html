@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ingunnels — small, honest software made by Kevin Gunnels. Home of Pindot, a Wear OS app for distracting a baby during diaper changes.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>ingunnels</title>
+
+  <!-- No external fonts, no analytics, no CDN. Same no-tracking ethos as the apps. -->
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f5f5f5;
+      --muted: #a8a8a8;
+      --amber: #ffc107;
+      --amber-soft: #ffd54f;
+      --rule: #1f1f1f;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    header.brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .rings {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--amber);
+    }
+
+    h1 .domain {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 18px;
+      display: block;
+      letter-spacing: 0;
+      margin-top: 2px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 48px 0 16px;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--fg);
+    }
+
+    p.lede {
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    a {
+      color: var(--amber-soft);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 213, 79, 0.3);
+      transition: border-color 120ms ease;
+    }
+
+    a:hover, a:focus {
+      border-bottom-color: var(--amber-soft);
+    }
+
+    .product {
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      background: #111;
+    }
+
+    .product-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .product-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--amber);
+    }
+
+    .product-tag {
+      font-size: 14px;
+      color: var(--muted);
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    .product p {
+      color: var(--fg);
+      margin: 0 0 12px;
+    }
+
+    .product p:last-child { margin-bottom: 0; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      align-items: baseline;
+    }
+
+    footer a {
+      color: var(--muted);
+      border-bottom-color: rgba(168, 168, 168, 0.3);
+    }
+
+    footer a:hover, footer a:focus {
+      color: var(--amber-soft);
+      border-bottom-color: var(--amber-soft);
+    }
+
+    @media (max-width: 480px) {
+      main { padding: 40px 20px 64px; }
+      h1 { font-size: 26px; }
+      p.lede { font-size: 17px; }
+      .rings { width: 44px; height: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="brand">
+      <!-- Concentric amber rings — matches the Pindot identity. Decorative; no alt needed. -->
+      <svg class="rings" viewBox="0 0 56 56" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" fill="none" stroke="#ffc107" stroke-width="2.5"/>
+        <circle cx="28" cy="28" r="18" fill="none" stroke="#ffc107" stroke-width="2.5" opacity="0.7"/>
+        <circle cx="28" cy="28" r="10" fill="#ffc107"/>
+      </svg>
+      <h1>
+        ingunnels
+        <span class="domain">small software, made by hand</span>
+      </h1>
+    </header>
+
+    <p class="lede">
+      ingunnels is a personal software label by Kevin Gunnels. Small things, made carefully, with no ads and no data collection.
+    </p>
+
+    <h2>What we make</h2>
+
+    <div class="product">
+      <div class="product-header">
+        <span class="product-name">Pindot</span>
+        <span class="product-tag">Wear OS &middot; Android</span>
+      </div>
+      <p>
+        A bubble-popping game for your watch that gently distracts a baby or fussy toddler during diaper changes. The watch is worn on the caregiver's wrist; the screen is drawn upside-down so it reads upright to the child looking up. Settings are controlled from a companion phone app and sync to the watch in seconds.
+      </p>
+      <p>
+        Pindot started as a project to help my own 18-month-old son through the squirmy bit of a diaper change. It is free, it will stay free, and it does not collect any information about you or your child.
+      </p>
+      <div class="links">
+        <a href="/privacy-policy">Privacy policy</a>
+        <!-- TODO: replace href below with the live Play Store URL once the listing is approved. -->
+        <a href="#" aria-disabled="true" title="Coming to Google Play soon">On the Play Store (soon)</a>
+      </div>
+    </div>
+
+    <h2>The label</h2>
+
+    <p>
+      "ingunnels" is a play on my name. There is no company, no team, no investors &mdash; just one parent who likes building small, honest software in his spare time. If a project ever needs to grow into something more formal, it will. Until then, this is the home for things I have made and want to share.
+    </p>
+
+    <h2>Contact</h2>
+
+    <p>
+      For questions, feedback, or bug reports, email
+      <a href="mailto:info@ingunnels.com">info@ingunnels.com</a>.
+    </p>
+
+    <footer>
+      <span>&copy; Kevin Gunnels</span>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="mailto:info@ingunnels.com">info@ingunnels.com</a>
+    </footer>
+  </main>
+</body>
+</html>
